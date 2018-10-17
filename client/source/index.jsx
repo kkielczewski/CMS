@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/app';
+import Main from './containers/main';
 import Promise from 'promise-polyfill';
 import './styles/base.scss';
 
@@ -12,6 +12,6 @@ if (!window.Promise) {
 }
 
 ReactDOM.render(
-    <App />,
+    <Main />,
     document.querySelector('#root')
 );
