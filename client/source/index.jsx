@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from './redux';
-import Main from './containers/main';
+import View from './app/components/view';
 import Promise from 'promise-polyfill';
 import './styles/base.scss';
 
@@ -17,7 +17,7 @@ ReactDOM.render(
     <Provider store={store} >
     <BrowserRouter>
       <div className="app-container" style={{ height: '100%' }} >
-        <Main />
+        <View />
       </div>
     </BrowserRouter>
   </Provider>,
