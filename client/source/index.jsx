@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import configureStore from './redux';
+import configureStore from './app/redux';
 import View from './app/components/view';
 import Promise from 'promise-polyfill';
 import './styles/base.scss';

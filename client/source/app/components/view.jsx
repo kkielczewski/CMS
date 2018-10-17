@@ -3,7 +3,7 @@ import Header from './header/header';
 import Routes from '../routes';
 
 class View extends React.Component {
-  onClick = () => {
+  onClick() {
     this.header.handlePusher();
   }
   /* eslint-disable */
