@@ -1,6 +1,6 @@
 # dependencies
 /node_modules
-client/node_modules/
+
 
 # No need to follow VSCode workspace settings.
 /.vscode/*
