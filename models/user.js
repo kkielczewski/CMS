@@ -1,31 +1,18 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
-const { ROLES } = require('../constants');
 
 //= ===============================
 // User Schema
 //= ===============================
 const UserSchema = new mongoose.Schema(
   {
-    email: {
+    username: {
       type: String,
       lowercase: true,
       unique: true,
       required: true
     },
-    password: { type: String, required: true },
-    name: {
-      first: { type: String, required: true },
-      last: { type: String, required: true }
-    },
-    role: {
-      type: String,
-      enum: Object.keys(ROLES).map(key => ROLES[key]),
-      default: ROLES.USER
-    },
-    resetPasswordToken: { type: String },
-    resetPasswordExpires: { type: Date },
-    deactivated: { type: Boolean, default: false }
+    password: { type: String, required: true }
   },
   {
     timestamps: true,
@@ -37,10 +24,6 @@ const UserSchema = new mongoose.Schema(
     }
   },
 );
-
-UserSchema.virtual('fullName').get(function virtualFullName() {
-  return `${this.name.first} ${this.name.last}`;
-});
 
 //= ===============================
 // User model hooks
