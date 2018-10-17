@@ -1,0 +1,23 @@
+{
+  "name": "kielczewski",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": "https://github.com/kkielczewski/kielczewski",
+  "author": "Kamil <kam.kielczewski@gmail.com>",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "kcors": "^2.2.2",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "koa-passport": "^4.1.1",
+    "koa-send": "^5.0.0",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.3.4",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {}
+}

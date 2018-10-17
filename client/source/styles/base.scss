@@ -1,0 +1,181 @@
+// Components
+@import "slick/slick.css";
+@import "slick/slick-theme.css";
+@import "semantic/semantic.min.css";
+
+@import "partials/navigation";
+@import "partials/video-carousel";
+@import "partials/main-articles";
+@import "partials/expert-carousel";
+@import "partials/survey";
+@import "partials/product-carousel";
+
+@import "partials/videos";
+@import "partials/main-movies";
+@import "partials/articles";
+
+@import "partials/experts";
+
+@import "partials/video-page";
+@import "partials/expert-info";
+@import "partials/advice";
+
+@import "partials/info";
+@import "partials/newsletter";
+
+@import "partials/search-results";
+
+@import "partials/red-line";
+
+@import "partials/main-contest";
+@import "partials/contest-winners";
+@import "partials/fbin-contests";
+@import "partials/all-contests";
+
+@import "partials/main-sales";
+
+// Main Page
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e2dedf;
+  margin: 0;
+  line-height: normal;
+  font-family: 'Open Sans', sans-serif !important; 
+}
+
+// White Container
+
+.whiteContainer {
+  position: relative;
+  width: 1980px;
+  padding: 1px 0;
+  margin: 70px auto;
+  .videoNav {
+    text-align: center;
+  }
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 4px 6px 12px 0px rgba(0,0,0,0.3);
+    background-color: white;
+    z-index: -1;
+  }
+  .whiteHundred {
+    height: 100%;
+  }
+  .whiteVideos {
+    height: 90%;
+  }
+  .whiteArticles {
+    height: 90%;
+  }
+  .whiteExpert {
+    height: 85%;
+  }
+  .whiteProduct {
+    height: 85%;
+  }
+  .whiteMovies {
+    height: 90%;
+  }
+  .whiteDoctorMovies {
+    height: 90%;
+  }
+  .whiteContestWinners {
+    height: 85%;
+  }
+}
+.whiteFull {
+  box-shadow: 4px 6px 12px 0px rgba(0,0,0,0.3);
+  background-color: white;
+}
+
+@media screen and (max-width: 2170px) {
+  .whiteContainer {
+    width: 1404px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .whiteContainer {
+    width: 972px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .whiteContainer {
+    width: 746px;
+    .whiteVideos {
+      height: 100%;
+    }
+    .whiteArticles {
+      height: 100%;
+    }
+    .whiteExpert {
+      height: 100%;
+    }
+    .whiteMovies {
+      height: 100%;
+    }
+    .whiteDoctorMovies {
+      height: 100%;
+    }
+    .whiteContestWinners {
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .whiteContainer {
+    width: 100%;
+    margin: 30px auto;
+  }
+}
+
+// Blue Stripe
+
+.blueStripe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 1600px;
+  margin: auto;
+  background-color: #a4b8d9;
+  z-index: -1;
+}
+
+@media screen and (max-width: 2170px) {
+  .blueStripe {
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .blueStripe {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .blueStripe {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blueStripe {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .blueStripe {
+    width: 270px;
+  }
+}

@@ -1,0 +1,238 @@
+.infoHeader {
+  width: 140px;
+  margin: 30px auto 15px !important;
+  background-color: white;
+  z-index: 2;
+}
+.contactHeader {
+  width: 180px;
+  margin: 30px auto 15px !important;
+  background-color: white;
+  z-index: 2;
+}
+.infoDescriptionContainer {
+  margin-top: 20px;
+  .description {
+    width: 1900px;
+    margin: auto auto 30px;
+    min-height: 675px;
+    img {
+      width: 604px;
+      float: left;
+      box-shadow: 4px 6px 12px 0px rgba(0,0,0,0.3);
+    }
+    .text {
+      width: 1286px;
+      margin-left: 625px;
+      p {
+        font-style: italic;
+        font-size: 26px;
+        margin-bottom: 3px;
+        line-height: 27px;
+      }
+      ul {
+        font-style: italic;
+        font-size: 26px;
+        margin: 4px;
+      }
+      .title {
+        font-size: 34px;
+        font-weight: 600;
+      }
+      .paragraphTitle {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 2170px) {
+  .infoHeader {
+    width: 100px;
+    margin: 21px auto 15px !important;
+  }
+  .contactHeader {
+    width: 130px;
+    margin: 21px auto 15px !important;
+  }
+  .infoDescriptionContainer {
+    .description {
+      width: 1350px;
+      min-height: 555px;
+      img {
+        width: 500px;
+      }
+      .text {
+        width: 840px;
+        margin-left: 520px;
+        p {
+          font-size: 18px;
+          line-height: 21px;
+        }
+        ul {
+          font-size: 18px;
+          line-height: 21px;
+        }
+        .title {
+          font-size: 30px;
+          line-height: 30px
+        }
+        .paragraphTitle {
+          font-size: 21px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .infoHeader {
+    width: 80px;
+    margin: 20px auto 10px !important;
+  }
+  .contactHeader {
+    width: 100px;
+    margin: 20px auto 10px !important;
+  }
+  .infoDescriptionContainer {
+    .description {
+      width: 932px;
+      min-height: 435px;
+      img {
+        width: 355px;
+        height: 355px;
+        margin-right: 15px;
+      }
+      .text {
+        width: 932px;
+        margin-left: 0;
+        p {
+          font-size: 17px;
+          line-height: 18px;
+          margin-bottom: 4px;
+        }
+        ul {
+          font-size: 16px;
+          line-height: 17px;
+        }
+        .title {
+          font-size: 26px;
+          line-height: 27px
+        }
+        .paragraphTitle {
+          font-size: 20px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .infoHeader {
+    width: 90px;
+  }
+  .contactHeader {
+    width: 110px;
+  }
+  .infoDescriptionContainer {
+    .description {
+      width: 706px;
+      min-height: 380px;
+      img {
+        width: 300px;
+        height: 300px;
+      }
+      .text {
+        width: 706px;
+        margin: 0px;
+        .title {
+          font-size: 20px;
+          line-height: 22px;
+        }
+        .paragraphTitle {
+          font-size: 18px;
+          line-height: 19px;
+        }
+        p {
+          margin-bottom: 3px;
+          line-height: 18px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .infoDescriptionContainer {
+    .description {
+      width: 496px;
+      height: auto;
+      img {
+        width: 375px;
+        height: 375px;
+        float: none;
+        display: inherit;
+        margin: auto;
+      }
+      .text {
+        width: 486px;
+        margin: 10px 5px;
+        .title {
+          font-size: 28px;
+          line-height: 28px;
+        }
+        .paragraphTitle {
+          font-size: 22px;
+          line-height: 23px;
+        }
+        p {
+          font-size: 20px;
+          line-height: 20px;
+          margin-bottom: 7px;
+        }
+        ul {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .infoDescriptionContainer {
+    .description {
+      width: 400px;
+      img {
+        width: 375px;
+        height: 375px;
+      }
+      .text {
+        width: 380px;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .infoDescriptionContainer {
+    .description {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 350px;
+      }
+      .text {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+  }
+}

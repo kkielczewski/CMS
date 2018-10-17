@@ -1,0 +1,763 @@
+.otherMovies {
+  .header {
+    font-size: 38px !important;
+    clear: left;
+  }
+}
+// Main Container
+.videoPageContainer {
+  width: 2000px;
+  margin: 25px auto auto;
+  height: auto;
+  overflow: hidden;
+  // Big Container
+  .main {
+    margin: 10px 0 60px 10px;
+    float: left;
+    background-color: white;
+    box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+    .card {
+      width: 1248px;
+      height: 702px;
+      margin: 60px auto 40px;
+      border-radius: 0;
+      box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+      a {
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+      .image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 0 !important;
+      }
+    }
+    // Title Container
+    .title {
+      width: 1408px;
+      padding: 0 80px;
+      height: auto;
+      overflow: hidden;
+      .header {
+        color: #db2828;
+        float: left;
+        width: 73%;
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+      .buttons {
+        float: right;
+        .subscribe {
+          font-size: 25px;
+          border-radius: 0;
+          color: black;
+          background-color: white;
+          transition: background-color 0.5s;
+          border-style: solid;
+          float: left;
+          margin: 0;
+          padding: 13px 20px;
+        }
+        .subscribe:hover {
+          background-color: rgba(0,0,0,.05);
+          transition: background-color 0.5s;
+        }
+        .facebook {
+          border: none;
+          font-size: 57px;
+          padding: 0;
+          margin: 0;
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+    // Content
+    .description {
+      clear: both;
+      width: 1408px;
+      font-size: 28px;
+      padding: 0 80px;
+      margin: 20px auto 60px;
+      .paragraph {
+        margin-bottom: 5px;
+      }
+      .header {
+        font-size: 26px;
+      }
+    }
+  }
+  // Side Container
+  .sidePanel {
+    float: left;
+    .center {
+      margin: 10px auto 10px 60px;
+      width: 512px;
+      background-color: white;
+      box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+      position: relative;
+      .header {
+        font-size: 34px;
+        width: 360px;
+        margin: 0 auto 30px;
+        position: relative;
+        top: 33px;
+        color: #db2828;
+        text-align: center;
+        background-color: white;
+        z-index: 2;
+      }
+      .lastVideosCenter {
+        width: 295px !important;
+      }
+      // Last Articles
+      .lastAM {
+        height: auto;
+        overflow: hidden;
+        .card {
+          width: 400px;
+          height: 550px;
+          margin: 30px auto;
+          box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+          a {
+            height: 100%;
+          }
+          .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            border: none !important;
+            opacity: 0;
+            transition: all .4s ease-in-out;
+            .header {
+              font-size: 31px;
+              color: white;
+              padding: 5px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin: 0;
+              margin-right: -50%;
+              transform: translate(-50%,-50%);
+              width: auto;
+              border-style: none;
+            }
+          }
+          .black {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: black;
+            opacity: 0;
+            transition: all .4s ease-in-out;
+          }
+          .image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+          }
+        }
+        .card:hover {
+          .black {
+            opacity: 0.7;
+            transition: all .4s ease-in-out;
+          }
+          .content {
+            opacity: 1;
+            transition: all .4s ease-in-out;
+          }
+        }
+      }
+      // Last Videos
+      .lastAMVideo {
+        height: auto;
+        overflow: hidden;
+        .card {
+          width: 448px;
+          height: 252px;
+          margin: 30px auto;
+          box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+          .image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    // Products Mentioned in Article
+    .articleProductsContainer {
+      margin: 80px auto 10px 60px;
+      width: 512px;
+      height: auto;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+      position: relative;
+      .articleHeader {
+        font-size: 34px;
+        width: 410px;
+        margin: 0 auto 60px;
+        position: relative;
+        top: 33px;
+        color: #db2828;
+        text-align: center;
+        background-color: white;
+        z-index: 2;
+      }
+      .articleProducts {
+        margin-bottom: 60px;
+        .card {
+          width: 250px;
+          margin: 30px auto;
+          border-radius: 0;
+          box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+          .imageContainer {
+            position: relative;
+            height: 250px;
+            .image {
+              max-width: 100%;
+              max-height: 100%;
+              position: absolute;
+              margin: auto;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+            }
+          }
+          .content {
+            text-align: center;
+            padding: 10px;
+            height: 130px;
+            .header {
+              height: 85px;
+              font-size: 20px !important;
+              overflow: hidden;
+              color: black;
+            }
+            .description {
+              font-size: 20px;
+              color: #db2828;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Products Mentioned in Article Header
+.mentionedProducts {
+  font-size: 24px !important;
+}
+
+@media screen and (max-width: 2170px) {
+  // Main Container
+  .videoPageContainer {
+    width: 1424px;
+    // Big Container
+    .main {
+      margin: 10px 0 10px 10px;
+      .card {
+        width: 848px;
+        height: 477px;
+        margin: 60px auto 20px;
+      }
+      .title {
+        width: 950px;
+        padding: 0 40px;
+        .header {
+          width: 70%;
+          font-size: 28px;
+        }
+        .buttons {
+          .subscribe {
+            font-size: 18px;
+            padding: 10px 20px;
+          }
+          .facebook {
+            font-size: 44px;
+          }
+        }
+      }
+      // Content
+      .description {
+        width: 950px;
+        font-size: 24px;
+        padding: 0 40px;
+        .header {
+          font-size: 24px;
+        }
+      }
+    }
+    // Side Container
+    .sidePanel {
+      .center {
+        width: 394px;
+        .header {
+          font-size: 24px;
+          width: 260px;
+          top: 25px;
+          margin: 0 auto 15px;
+        }
+        .lastVideosCenter {
+          width: 210px !important;
+        }
+        // Last Articles
+        .lastAM {
+          .card {
+            width: 320px;
+            height: 440px;
+            .content {
+              .header {
+                font-size: 25px;
+              }
+            }
+          }
+        }
+        // Last Videos
+        .lastAMVideo {
+          .card {
+            width: 320px;
+            height: 180px;
+          }
+        }
+        .articleProducts {
+          .card {
+            margin: 2px;
+            width: 185px;
+          }
+        }
+      }
+      // Products Mentioned in Article
+      .articleProductsContainer {
+        margin: 60px auto 10px 60px;
+        width: 394px;
+        .articleHeader {
+          font-size: 24px;
+          width: 290px;
+          margin: 0 auto 40px;
+          top: 25px;
+        }
+        .articleProducts {
+          .card {
+            width: 215px;
+            margin: 20px auto;
+            .imageContainer {
+              height: 225px;
+            }
+            .content {
+              height: 120px;
+              .header {
+                font-size: 18px !important;
+                height: 75px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .otherMovies {
+    .header {
+      font-size: 32px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .otherMovies {
+    .header {
+      font-size: 28px !important;
+    }
+  }
+  // Main Container
+  .videoPageContainer {
+    width: 992px;
+    // Big Container
+    .main {
+      .card {
+        width: 560px;
+        height: 315px;
+      }
+      // Title Container
+      .title {
+        width: 630px;
+        padding: 0 35px;
+        .header {
+          width: 69%;
+          font-size: 24px;
+          padding-top: 5px;
+        }
+        .buttons {
+          .subscribe {
+            font-size: 12px;
+            padding: 8px;
+          }
+          .facebook {
+            font-size: 34px;
+          }
+        }
+      }
+      // Content
+      .description {
+        width: 630px;
+        font-size: 20px;
+        padding: 0 35px;
+        margin: 10px auto 30px;
+        .header {
+          font-size: 20px;
+        }
+      }
+    }
+    // Side Container
+    .sidePanel {
+      .center {
+        margin: 10px auto auto 32px;
+        width: 310px;
+        .header {
+          font-size: 20px;
+          width: 210px;
+          top: 23px;
+          margin: 0 auto 5px;
+        }
+        .lastVideosCenter {
+          width: 175px !important;
+        }
+        // Last Articles
+        .lastAM {
+          .card {
+            width: 210px;
+            height: 288px;
+            .content {
+              .header {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        // Last Videos
+        .lastAMVideo {
+          .card {
+            width: 272px;
+            height: 153px;
+          }
+        }
+        .articleProducts {
+          .card {
+            width: 145px;
+            .imageContainer {
+              height: 200px;
+            }
+          }
+        }
+      }
+      // Products Mentioned in Article
+      .articleProductsContainer {
+        margin: 40px auto 10px 32px;
+        width: 310px;
+        .articleHeader {
+          font-size: 20px;
+          margin: 0 auto 30px;
+          top: 23px;
+          width: 240px;
+        }
+        .articleProducts {
+          margin-bottom: 40px;
+          .card {
+            width: 190px;
+            .imageContainer {
+              height: 175px;
+            }
+            .content {
+              .header {
+                font-size: 16px !important;
+                height: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  // Main Container
+  .videoPageContainer {
+    // Side Container
+    .sidePanel {
+      .center {
+        // Last Articles
+        .lastAM {
+          .card {
+            .content {
+              opacity: 1;
+              width: 100%;
+              height: 75px;
+              margin: auto;
+              background-color: white;
+              border: solid !important;
+              border-width: 1px!important;
+              border-color: lightgray !important;
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              overflow: hidden;
+              .header {
+                font-size: 16px;
+                padding: 5px;
+                margin: auto;
+                color: black;
+                width: 100%;
+                height: 100%;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  // Main Container
+  .videoPageContainer {
+    width: 766px;
+    // Big Container
+    .main {
+      clear: both;
+      .card {
+        width: 672px;
+        height: 378px;
+      }
+      // Title Container
+      .title {
+        width: 746px;
+        margin: 10px auto;
+        .header {
+          font-size: 23px;
+          width: 74%;
+        }
+      }
+      // Content
+      .description {
+        width: 746px;
+      }
+    }
+    // Side Container
+    .sidePanel {
+      display: none;
+    }
+  }
+  // Products Mentioned in Article
+  .articleProductsSmall {
+    width: 708px;
+    margin: auto;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+    .card {
+      height: 350px;
+      width: 216px;
+      margin: 10px!important;
+      float: left;
+      border-radius: 0;
+      box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+      .imageContainer {
+        position: relative;
+        height: 225px;
+        .image {
+          max-width: 100%;
+          max-height: 100%;
+          position: absolute;
+          margin: auto;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+        }
+      }
+      .content {
+        border-top: none;
+        text-align: center;
+        padding: 10px;
+        .header {
+          font-size: 18px !important;
+          height: 75px;
+          overflow: hidden;
+          margin-bottom: 10px;
+          color: black;
+        }
+        .description {
+          font-size: 20px;
+          font-weight: 600;
+          margin-top: 0 !important;
+          color: #db2828;
+        }
+      }
+    }
+  }
+  .otherMovies {
+    .header {
+      font-size: 24px !important;
+    }
+  }
+  .mentionedProducts {
+    margin: 20px auto !important;
+    color: #db2828 !important;
+    width: 245px;
+    position: relative;
+    background-color: white;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // Main Container
+  .videoPageContainer {
+    width: 100%;
+    // Big Container
+    .main {
+      width: 100%;
+      margin: 0 0 30px auto;
+      .card {
+        width: 496px;
+        height: 279px;
+        margin: 30px auto 10px;
+      }
+      // Title Container
+      .title {
+        width: 496px;
+        padding: 0;
+        .header {
+          width: 100%;
+        }
+        .buttons {
+          float: none;
+          .subscribe {
+            font-size: 18px;
+          }
+          .facebook {
+            font-size: 40px;
+          }
+        }
+      }
+      // Content
+      .description {
+        width: 496px;
+        padding: 0;
+      }
+    }
+  }
+  // Products Mentioned in Article
+  .articleProductsSmall {
+    width: 496px;
+    .card {
+      box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  // Main Container
+  .videoPageContainer {
+    // Big Container
+    .main {
+      .card {
+        width: 400px;
+        height: 225px;
+      }
+      // Title Container
+      .title {
+        width: 400px;
+        .buttons {
+          .subscribe {
+            font-size: 15.5px;
+          }
+          .facebook {
+            font-size: 37px;
+          }
+        }
+      }
+      // Content
+      .description {
+        width: 400px;
+      }
+    }
+  }
+  // Products Mentioned in Article
+  .articleProductsSmall {
+    width: 400px;
+    .card {
+      width: 180px;
+      height: 290px;
+      margin: 10px !important;
+      .imageContainer {
+        height: 190px;
+      }
+      .content {
+        padding: 5px;
+        .header {
+          font-size: 15px !important;
+          height: 60px;
+        }
+        .description {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  // Main Container
+  .videoPageContainer {
+    width: 100%;
+    // Big Container
+    .main {
+      .card {
+        width: 100%;
+        height: 196px;
+      }
+      // Title Container
+      .title {
+        width: 100%;
+        padding: 0 8px;
+      }
+      // Content
+      .description {
+        width: 100%;
+        padding: 0 8px;
+      }
+    }
+  }
+  // Products Mentioned in Article
+  .articleProductsSmall {
+    width: 100%;
+    .card {
+      width: 50%;
+      margin: 0 !important;
+      box-shadow: none;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ededed;
+      height: 297px;
+      .imageContainer {
+        height: 188px;
+      }
+      .content {
+        .header {
+          font-size: 16px !important;
+          height: 65px;
+        }
+        .description {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
