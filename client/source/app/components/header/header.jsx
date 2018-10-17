@@ -18,14 +18,6 @@ class Header extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.onRef(this);
-  }
-
-  componentWillUnmount() {
-    this.props.onRef(undefined);
-  }
-
   handlePusher() {
     const { visible } = this.state;
 

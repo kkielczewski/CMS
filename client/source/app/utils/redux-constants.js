@@ -1,5 +1,5 @@
 // Namespace for application
-export const APP_NAMESPACE = 'kielczewski';
+export const APP_NAMESPACE = 'alleccocms';
 
 // Request status indicators
 export const PENDING = 'PENDING';
