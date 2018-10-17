@@ -1,49 +1,38 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import TextInput from '../form-fields/text-input';
 import GenericForm from '../form-fields/generic-form';
 import { resetPassword, RESET_PASSWORD } from '../../redux/modules/authentication';
-import { errorPropTypes } from '../../utils/proptype-utils';
 import '../../../styles/authentication.scss';
 
 const form = reduxForm({
   form: 'resetPassword'
 });
 
+const formSpec = [
+  {
+    id: 'password',
+    name: 'password',
+    label: 'Password',
+    type: 'password',
+    placeholder: '********',
+    component: TextInput
+  },
+  {
+    id: 'passwordConfirm',
+    name: 'passwordConfirm',
+    label: 'Confirm Password',
+    type: 'password',
+    placeholder: '********',
+    component: TextInput
+  }
+];
+
 class ResetPassword extends Component {
-  static propTypes = {
-    resetPassword: PropTypes.func,
-    handleSubmit: PropTypes.func,
-    errors: errorPropTypes,
-    message: PropTypes.string,
-    loading: PropTypes.bool,
-    params: PropTypes.shape({
-      token: PropTypes.string
-    })
-  };
-
-  static formSpec = [
-    {
-      id: 'password',
-      name: 'password',
-      label: 'Password',
-      type: 'password',
-      placeholder: '********',
-      component: TextInput
-    },
-    {
-      id: 'passwordConfirm',
-      name: 'passwordConfirm',
-      label: 'Confirm Password',
-      type: 'password',
-      placeholder: '********',
-      component: TextInput
-    }
-  ];
-
-  handleFormSubmit = formProps => this.props.resetPassword(formProps, this.props.params.token);
+  handleFormSubmit(formProps) {
+    this.props.resetPassword(formProps, this.props.params.token);
+  }
 
   render() {
     const {
@@ -59,7 +48,7 @@ class ResetPassword extends Component {
           onSubmit={handleSubmit(this.handleFormSubmit)}
           errors={errors}
           message={message}
-          formSpec={ResetPassword.formSpec}
+          formSpec={formSpec}
           submitText="Change Password"
         />
       </div>

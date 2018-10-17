@@ -1,5 +1,4 @@
 import React from 'react';
-import { fieldPropTypes } from '../../utils/proptype-utils';
 
 const Checkbox = ({
   input,
@@ -14,7 +13,5 @@ const Checkbox = ({
     {meta.touched && meta.error && <div className="alert alert-card alert-error">{meta.error}</div>}
   </div>
 );
-
-Checkbox.propTypes = fieldPropTypes;
 
 export default Checkbox;

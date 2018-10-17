@@ -1,5 +1,4 @@
 import React from 'react';
-import { fieldPropTypes } from '../../utils/proptype-utils';
 
 const Textarea = ({
   input,
@@ -22,6 +21,5 @@ const Textarea = ({
   </label>
 );
 
-Textarea.propTypes = fieldPropTypes;
 
 export default Textarea;

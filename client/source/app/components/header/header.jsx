@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Icon,
@@ -18,21 +17,26 @@ class Header extends Component {
       visible: false
     };
   }
+
   componentDidMount() {
     this.props.onRef(this);
   }
+
   componentWillUnmount() {
     this.props.onRef(undefined);
   }
-  handlePusher = () => {
+
+  handlePusher() {
     const { visible } = this.state;
 
     if (visible) this.setState({ visible: false });
-  };
+  }
 
-  handleToggle = () => this.setState({ visible: !this.state.visible });
+  handleToggle() {
+    this.setState({ visible: !this.state.visible });
+  }
 
-  buildNavigation = () => {
+  buildNavigation() {
     const { user } = this.props;
     const links = [
       {
@@ -70,7 +74,7 @@ class Header extends Component {
         </li>
       ))
     );
-  };
+  }
 
   render() {
     const { visible } = this.state;
@@ -106,14 +110,6 @@ class Header extends Component {
     );
   }
 }
-
-Header.propTypes = {
-  user: PropTypes.shape({
-    firstName: PropTypes.string
-  }),
-  authenticated: PropTypes.bool,
-  logoutUser: PropTypes.func
-};
 
 const mapStateToProps = ({ user, authentication }) => ({
   user: getAuthenticatedUser({ user, authentication }),

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
@@ -13,27 +12,21 @@ const form = reduxForm({
   form: 'forgotPassword'
 });
 
+const formSpec = [
+  {
+    id: 'email',
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    placeholder: 'you@yourdomain.com',
+    component: TextInput
+  }
+];
+
 class ForgotPassword extends Component {
-  static propTypes = {
-    forgotPassword: PropTypes.func,
-    handleSubmit: PropTypes.func,
-    errors: errorPropTypes,
-    message: PropTypes.string,
-    loading: PropTypes.bool
-  };
-
-  static formSpec = [
-    {
-      id: 'email',
-      name: 'email',
-      label: 'Email',
-      type: 'email',
-      placeholder: 'you@yourdomain.com',
-      component: TextInput
-    }
-  ];
-
-  handleFormSubmit = formProps => this.props.forgotPassword(formProps);
+  handleFormSubmit(formProps) {
+    this.props.forgotPassword(formProps);
+  }
 
   render() {
     const {
@@ -49,7 +42,7 @@ class ForgotPassword extends Component {
           onSubmit={handleSubmit(this.handleFormSubmit)}
           errors={errors}
           message={message}
-          formSpec={ForgotPassword.formSpec}
+          formSpec={formSpec}
           submitText="Reset Password"
         />
         <Link className="inline" to="/login">Back to login</Link>

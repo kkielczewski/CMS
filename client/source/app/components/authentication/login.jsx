@@ -1,48 +1,37 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import TextInput from '../form-fields/text-input';
 import GenericForm from '../form-fields/generic-form';
 import { login, CHANGE_AUTH } from '../../redux/modules/authentication';
-import { errorPropTypes } from '../../utils/proptype-utils';
 import '../../../styles/authentication.scss';
 
 const form = reduxForm({
   form: 'login'
 });
 
+const formSpec = [
+  {
+    id: 'email',
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    placeholder: 'you@yourdomain.com',
+    component: TextInput
+  },
+  {
+    id: 'password',
+    name: 'password',
+    label: 'Password',
+    type: 'password',
+    placeholder: '********',
+    component: TextInput
+  }
+];
+
 class Login extends Component {
-  static propTypes = {
-    handleSubmit: PropTypes.func,
-    desiredPath: PropTypes.string,
-    login: PropTypes.func,
-    errors: errorPropTypes,
-    message: PropTypes.string,
-    loading: PropTypes.bool
-  };
-
-  static formSpec = [
-    {
-      id: 'email',
-      name: 'email',
-      label: 'Email',
-      type: 'email',
-      placeholder: 'you@yourdomain.com',
-      component: TextInput
-    },
-    {
-      id: 'password',
-      name: 'password',
-      label: 'Password',
-      type: 'password',
-      placeholder: '********',
-      component: TextInput
-    }
-  ];
-
-  handleFormSubmit = (formProps) => {
+  handleFormSubmit(formProps) {
     const { desiredPath } = this.props;
     if (desiredPath) {
       this.props.login(formProps, desiredPath);
@@ -51,7 +40,7 @@ class Login extends Component {
     }
   }
 
-  render = () => {
+  render() {
     const {
       handleSubmit,
       errors,
@@ -66,7 +55,7 @@ class Login extends Component {
           onSubmit={handleSubmit(this.handleFormSubmit)}
           errors={errors}
           message={message}
-          formSpec={Login.formSpec}
+          formSpec={formSpec}
           submitText="Login"
         />
         <Link className="inline" to="/forgot-password">Forgot password?</Link> | <Link className="inline" to="/register">Create a new account.</Link>

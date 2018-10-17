@@ -1,5 +1,4 @@
 import React from 'react';
-import { fieldPropTypes } from '../../utils/proptype-utils';
 
 const TextInput = ({
   input,
@@ -22,7 +21,5 @@ const TextInput = ({
     />
   </label>
 );
-
-TextInput.propTypes = fieldPropTypes;
 
 export default TextInput;

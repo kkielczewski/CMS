@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './card.scss';
 
@@ -23,17 +22,6 @@ const Card = ({ title, image = {}, children }) => {
       </div>
     </div>
   );
-};
-
-Card.propTypes = {
-  children: PropTypes.node,
-  image: PropTypes.shape({
-    src: PropTypes.string,
-    title: PropTypes.string,
-    alt: PropTypes.string,
-    linkTo: PropTypes.string
-  }),
-  title: PropTypes.string
 };
 
 export default Card;

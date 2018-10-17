@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { errorPropTypes } from '../../utils/proptype-utils';
 
 /**
  * Alert  - Standard alert card component
@@ -23,12 +21,6 @@ const Alert = ({ errors = [], message = '', icon }) => {
       </div>
     </div>
   );
-};
-
-Alert.propTypes = {
-  errors: errorPropTypes,
-  icon: PropTypes.string,
-  message: PropTypes.string
 };
 
 export default Alert;

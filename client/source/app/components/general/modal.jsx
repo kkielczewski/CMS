@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './modal.scss';
 
 class Modal extends Component {
-  static propTypes = {
-    handleClose: PropTypes.func,
-    heading: PropTypes.string,
-    isOpen: PropTypes.bool,
-    canScroll: PropTypes.bool,
-    children: PropTypes.node
-  };
+  componentDidMount() {
+    window.addEventListener('keyup', this.escapeClose);
+  }
 
-  componentDidMount = () => window.addEventListener('keyup', this.escapeClose);
-  componentWillUnmount = () => window.removeEventListener('keyup', this.escapeClose);
+  componentWillUnmount() {
+    window.removeEventListener('keyup', this.escapeClose);
+  }
 
-  escapeClose = (e) => {
+  escapeClose(e) {
     if (e.which === 27 && this.props.isOpen) {
       this.props.handleClose(e);
     }

@@ -15,11 +15,10 @@ export const RESET_PASSWORD = `${typeBase}RESET_PASSWORD`;
 export const GET_AUTHENTICATED_USER = `${typeBase}GET_AUTHENTICATED_USER`;
 
 // Actions
-export const changeAuthentication = payload => dispatch =>
-  dispatch({
-    type: CHANGE_AUTH,
-    payload
-  });
+export const changeAuthentication = payload => dispatch => dispatch({
+  type: CHANGE_AUTH,
+  payload
+});
 
 /**
  * login - Authenticate a user with an email and password
@@ -67,11 +66,10 @@ export const register = formData => async (dispatch) => {
  * @param {String} payload  The desired path, saved pre-authentication
  * @returns {function}
  */
-export const setPostAuthPath = payload => dispatch =>
-  dispatch({
-    type: SET_POST_AUTH_PATH,
-    payload
-  });
+export const setPostAuthPath = payload => dispatch => dispatch({
+  type: SET_POST_AUTH_PATH,
+  payload
+});
 
 /**
  * logoutUser  - Log user out by clearing auth state and token cookie

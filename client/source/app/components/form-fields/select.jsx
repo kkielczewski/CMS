@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { fieldPropTypes } from '../../utils/proptype-utils';
 
 const Select = ({
   input,
@@ -24,10 +22,5 @@ const Select = ({
     </select>
   </label>
 );
-
-Select.propTypes = {
-  ...fieldPropTypes,
-  children: PropTypes.node
-};
 
 export default Select;
