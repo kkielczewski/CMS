@@ -36,11 +36,6 @@ const responseValidator = function responseValidator(req, fields) {
         // req[fields[i].name] = validator.escape(req[fields[i].name]);
       }
 
-      if (fields[i].name === 'email') {
-        if (!validator.isEmail(req.email)) {
-          errors.push({ error: ERRORS.INVALID_EMAIL });
-        }
-      }
       if (fields[i].name === 'password') {
         if (req.password && req.password.length < 8) {
           errors.push({ error: ERRORS.PASSWORD_TOO_SHORT });
