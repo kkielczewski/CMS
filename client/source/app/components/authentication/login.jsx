@@ -31,6 +31,11 @@ const formSpec = [
 ];
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
   handleFormSubmit(formProps) {
     const { desiredPath } = this.props;
     if (desiredPath) {
