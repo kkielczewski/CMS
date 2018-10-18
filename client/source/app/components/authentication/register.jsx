@@ -31,8 +31,8 @@ const formSpec = [
   {
     id: 'email',
     name: 'email',
-    label: 'Email',
-    type: 'email',
+    label: 'User',
+    type: 'text',
     placeholder: 'you@yourdomain.com',
     component: TextInput
   },
