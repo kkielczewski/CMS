@@ -65,6 +65,7 @@ exports.login = (ctx, next) => passport.authenticate('local', async (err, user) 
  *            address does not already exist.
  */
 exports.register = async (ctx, next) => {
+  console.log(ctx.request.body);
   // Check for registration errors
   const validation = responseValidator(ctx.request.body, [
     { name: 'email', required: true },
@@ -77,9 +78,9 @@ exports.register = async (ctx, next) => {
     await next();
   }
 
-  const { email, password, name } = validation;
+  const { email, password } = validation;
 
-  if (email && password && name) {
+  if (email && password ) {
     const formattedEmail = email.toLowerCase();
     try {
       let user = await User.findOne({ email: formattedEmail });
@@ -90,7 +91,6 @@ exports.register = async (ctx, next) => {
         await next();
       } else {
         user = new User({
-          name,
           password,
           email
         });
