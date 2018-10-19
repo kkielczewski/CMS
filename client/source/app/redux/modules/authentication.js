@@ -11,7 +11,6 @@ const typeBase = `${APP_NAMESPACE}/${AUTH_ENDPOINT_BASE}/`;
 // Constants
 export const CHANGE_AUTH = `${typeBase}CHANGE_AUTH`;
 export const SET_POST_AUTH_PATH = `${typeBase}SET_POST_AUTH_PATH`;
-export const RESET_PASSWORD = `${typeBase}RESET_PASSWORD`;
 export const GET_AUTHENTICATED_USER = `${typeBase}GET_AUTHENTICATED_USER`;
 
 // Actions
@@ -82,36 +81,6 @@ export const logoutUser = () => (dispatch) => {
 };
 
 /**
- * forgotPassword - Sends user an email with a token to reset their password
- * @param {Object} formData  The user's email address
- * @returns {Promise}
- */
-/* eslint-disable */
-export const forgotPassword = formData => async (dispatch) => {
-  try {
-    const response = await post(dispatch, CHANGE_AUTH, `${AUTH_ENDPOINT_BASE}/forgot-password`, formData, false);
-    return Promise.resolve(response);
-  } catch (err) {
-    await handleError(dispatch, err, CHANGE_AUTH);
-  }
-};
-
-/**
- * resetPassword - Resets a user's password, given a valid token
- * @param {Object} formData  The user's email address
- * @param {String} token     Valid token required for password reset
- * @returns {Promise}
- */
-export const resetPassword = (formData, token) => async (dispatch) => {
-  try {
-    const response = await post(dispatch, CHANGE_AUTH, `${AUTH_ENDPOINT_BASE}/reset-password/${token}`, formData, false);
-    return Promise.resolve(response);
-  } catch (err) {
-    await handleError(dispatch, err, CHANGE_AUTH);
-  }
-};
-
-/**
  * getAuthenticatedUser - Retrieves the logged in user's information
  * @returns {Promise}
  */
@@ -128,7 +97,7 @@ export const getAuthenticatedUser = () => async (dispatch) => {
 const INITIAL_STATE = {
   authenticated: Boolean(getCookie('token')),
   user: '',
-  ...buildGenericInitialState([CHANGE_AUTH, SET_POST_AUTH_PATH, RESET_PASSWORD, GET_AUTHENTICATED_USER])
+  ...buildGenericInitialState([CHANGE_AUTH, SET_POST_AUTH_PATH, GET_AUTHENTICATED_USER])
 };
 
 export default (state = INITIAL_STATE, action) => {

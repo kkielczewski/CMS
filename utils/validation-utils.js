@@ -19,11 +19,6 @@ const responseValidator = function responseValidator(req, fields) {
     if (!isPresent && isRequired) {
       switch (fields[i].name) {
         case 'email': errors.push({ error: ERRORS.INVALID_EMAIL }); break;
-        case 'name':
-          if (!req.name || !req.name.first || !req.name.last) {
-            errors.push({ error: ERRORS.INVALID_NAME });
-          }
-          break;
         case 'password': errors.push({ error: ERRORS.INVALID_PASSWORD }); break;
         case 'passwordConfirm': errors.push({ error: ERRORS.PASSWORD_MUST_MATCH }); break;
         default: errors.push({ error: ERRORS.INVALID_ENTRY }); break;

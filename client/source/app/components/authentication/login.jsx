@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
 import TextInput from '../form-fields/text-input';
 import GenericForm from '../form-fields/generic-form';
 import { login, CHANGE_AUTH } from '../../redux/modules/authentication';
@@ -63,7 +62,6 @@ class Login extends Component {
           formSpec={formSpec}
           submitText="Login"
         />
-        <Link className="inline" to="/forgot-password">Forgot password?</Link> | <Link className="inline" to="/register">Create a new account.</Link>
       </div>
     );
   }

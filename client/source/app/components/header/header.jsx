@@ -29,16 +29,10 @@ class Header extends Component {
   }
 
   buildNavigation() {
-    const { user } = this.props;
     const links = [
       {
         name: 'Dashboard',
         link: 'dashboard',
-        authenticated: true
-      },
-      {
-        name: (user && user.firstName) || 'Profile',
-        link: 'profile',
         authenticated: true
       },
       {

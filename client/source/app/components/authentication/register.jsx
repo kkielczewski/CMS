@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
 import TextInput from '../form-fields/text-input';
 import GenericForm from '../form-fields/generic-form';
 import { register, CHANGE_AUTH } from '../../redux/modules/authentication';
@@ -12,22 +11,6 @@ const form = reduxForm({
 });
 
 const formSpec = [
-  {
-    id: 'firstName',
-    name: 'name.first',
-    label: 'First Name',
-    type: 'text',
-    placeholder: 'John',
-    component: TextInput
-  },
-  {
-    id: 'lastName',
-    name: 'name.last',
-    label: 'Last Name',
-    type: 'text',
-    placeholder: 'Snow',
-    component: TextInput
-  },
   {
     id: 'email',
     name: 'email',
@@ -82,7 +65,6 @@ class Register extends Component {
           formSpec={formSpec}
           submitText="Register"
         />
-        <Link className="inline" to="/login">Have an account?</Link>
       </div>
     );
   }

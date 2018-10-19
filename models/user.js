@@ -14,14 +14,10 @@ const UserSchema = new mongoose.Schema(
       required: true
     },
     password: { type: String, required: true },
-    name: {
-      first: { type: String, required: true },
-      last: { type: String, required: true }
-    },
     role: {
       type: String,
       enum: Object.keys(ROLES).map(key => ROLES[key]),
-      default: ROLES.USER
+      default: ROLES.ADMIN
     },
     resetPasswordToken: { type: String },
     resetPasswordExpires: { type: Date },
@@ -37,10 +33,6 @@ const UserSchema = new mongoose.Schema(
     }
   },
 );
-
-UserSchema.virtual('fullName').get(function virtualFullName() {
-  return `${this.name.first} ${this.name.last}`;
-});
 
 //= ===============================
 // User model hooks
