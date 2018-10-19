@@ -36,6 +36,11 @@ class Header extends Component {
         authenticated: true
       },
       {
+        name: 'Articles',
+        link: 'articles',
+        authenticated: true
+      },
+      {
         name: 'Sign out',
         onClick: this.props.logoutUser,
         authenticated: true
