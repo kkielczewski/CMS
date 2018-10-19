@@ -6,7 +6,7 @@ import Login from '../../components/authentication/login';
 const AuthenticatedRoutes = () => (
   <Switch>
     <Route exact path="/dashboard" component={() => <div><Login /></div>} />
-    <Route exact path="/articles" component={() => <div><Login /></div>} />
+    <Route exact path="/articles" component={() => <Articles />} />
   </Switch>
 );
 

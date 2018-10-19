@@ -12,6 +12,7 @@ const TopLevelRoutes = () => (
     <Route exact path="/login" component={Login} />
     <Route exact path="/register" component={Register} />
     <Route path="/dashboard" component={RequireAuth(AuthenticatedRoutes)} />
+    <Route path="/articles" component={RequireAuth(AuthenticatedRoutes)} />
   </Switch>
 );
 
