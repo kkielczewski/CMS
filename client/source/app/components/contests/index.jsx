@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class Articles extends Component {
+class Contests extends Component {
   render() {
     return (
       <div>
-        Articles
+        Contests
       </div>
     );
   }
 }
 
 // extended main view with translate hoc
-export default Articles;
+export default Contests;

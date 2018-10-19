@@ -1,0 +1,14 @@
+.homeContests {
+  width: 800px;
+  margin: auto !important;
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .labeled {
+    margin: 10px;
+    input {
+      width: 300px !important;
+    }
+  }
+}

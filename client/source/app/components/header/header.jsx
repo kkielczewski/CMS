@@ -36,19 +36,34 @@ class Header extends Component {
         authenticated: true
       },
       {
+        name: 'Home Page Contests',
+        link: 'homecontests',
+        authenticated: false
+      },
+      {
         name: 'Articles',
         link: 'articles',
-        authenticated: true
+        authenticated: false
+      },
+      {
+        name: 'Experts',
+        link: 'experts',
+        authenticated: false
+      },
+      {
+        name: 'Contests',
+        link: 'contests',
+        authenticated: false
+      },
+      {
+        name: 'Contests Winners',
+        link: 'winners',
+        authenticated: false
       },
       {
         name: 'Sign out',
         onClick: this.props.logoutUser,
         authenticated: true
-      },
-      {
-        name: 'Sign in',
-        link: 'login',
-        authenticated: false
       },
       {
         name: 'Register',
