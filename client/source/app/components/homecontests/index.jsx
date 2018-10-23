@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Segment, Input, Button, Form } from 'semantic-ui-react';
-import FileButton from '../form-fields/file-button';
+import axios from 'axios';
 
 class Homecontests extends Component {
   constructor(props) {
@@ -57,9 +57,10 @@ class Homecontests extends Component {
     this.setState({ insta1: { link: this.state.insta1.link, thumbnailName: value, thumbnail: this.state.insta1.thumbnail } });
   }
 
-  changeInsta1File(file) {
-    console.log(file.target.files.length);
-    this.setState({ insta1: { link: this.state.insta1.link, thumbnailName: this.state.insta1.thumbnailName, thumbnail: file } });
+  changeInsta1File(event) {
+    const image = event.target.files.item(0);
+    console.log(image);
+    this.setState({ insta1: { link: this.state.insta1.link, thumbnailName: this.state.insta1.thumbnailName, thumbnail: image } });
   }
 
   changeInsta2(e, { value }) {
@@ -70,8 +71,10 @@ class Homecontests extends Component {
     this.setState({ insta2: { link: this.state.insta2.link, thumbnailName: value, thumbnail: this.state.insta2.thumbnail } });
   }
 
-  changeInsta2File(file) {
-    this.setState({ insta2: { link: this.state.insta2.link, thumbnailName: this.state.insta2.thumbnailName, thumbnail: file } });
+  changeInsta2File(event) {
+    const image = event.target.files.item(0);
+    console.log(image);
+    this.setState({ insta2: { link: this.state.insta2.link, thumbnailName: this.state.insta2.thumbnailName, thumbnail: image } });
   }
 
   changeFacebook1(e, { value }) {
@@ -82,8 +85,10 @@ class Homecontests extends Component {
     this.setState({ facebook1: { link: this.state.facebook1.link, thumbnailName: value, thumbnail: this.state.facebook1.thumbnail } });
   }
 
-  changeFacebook1File(file) {
-    this.setState({ facebook1: { link: this.state.facebook1.link, thumbnailName: this.state.facebook1.thumbnailName, thumbnail: file } });
+  changeFacebook1File(event) {
+    const image = event.target.files.item(0);
+    console.log(image);
+    this.setState({ facebook1: { link: this.state.facebook1.link, thumbnailName: this.state.facebook1.thumbnailName, thumbnail: image } });
   }
 
   changeFacebook2(e, { value }) {
@@ -94,12 +99,27 @@ class Homecontests extends Component {
     this.setState({ facebook2: { link: this.state.facebook2.link, thumbnailName: value, thumbnail: this.state.facebook2.thumbnail } });
   }
 
-  changeFacebook2File(file) {
-    this.setState({ facebook2: { link: this.state.facebook2.link, thumbnailName: this.state.facebook2.thumbnailName, thumbnail: file } });
+  changeFacebook2File(event) {
+    const image = event.target.files.item(0);
+    console.log(image);
+    this.setState({ facebook2: { link: this.state.facebook2.link, thumbnailName: this.state.facebook2.thumbnailName, thumbnail: image } });
   }
 
   handleClick() {
-    console.log(this.state);
+    const tmp = [];
+    tmp.push(this.state.insta1.thumbnail);
+    tmp.push(this.state.insta2.thumbnail);
+    tmp.push(this.state.facebook1.thumbnail);
+    tmp.push(this.state.facebook2.thumbnail);
+    const uploaders = tmp.map((image) => {
+      const data = new FormData();
+      data.append('image', image, image.name);
+      // AJAX
+      return axios.post('https://alleccocms.herokuapp.com/upload', data)
+        .then((response) => {
+          console.log(response.data.imageUrl);
+        });
+    });
   }
 
   render() {
@@ -109,16 +129,20 @@ class Homecontests extends Component {
           <Input onChange={this.changeYoutube} label='Youtube link' />
           <Input onChange={this.changeInsta1} label='Link do pierwszego konkursu Instagram' />
           <Input onChange={this.changeInsta1Name} label='Nazwa zdjecia' />
+          <div>Zdjecie pierwszego konkursu Instagram</div>
           <input className="form-control " type="file" onChange={this.changeInsta1File} multiple/>
           <Input onChange={this.changeInsta2} label='Link do drugiego konkursu Instagram' />
           <Input onChange={this.changeInsta2Name} label='Nazwa zdjecia' />
-          <FileButton onSelect={this.changeInsta2File} label='Zdjecie drugiego konkursu Instagram' />
+          <div>Zdjecie drugiego konkursu Instagram</div>
+          <input className="form-control " type="file" onChange={this.changeInsta2File} multiple/>
           <Input onChange={this.changeFacebook1} label='Link do pierwszego konkursu Facebook' />
           <Input onChange={this.changeFacebook1Name} label='Nazwa zdjecia' />
-          <FileButton onSelect={this.changeFacebook1File} label='Zdjecie pierwszego konkursu Facebook' />
+          <div>Zdjecie pierwszego konkursu Facebook</div>
+          <input className="form-control " type="file" onChange={this.changeFacebook1File} multiple/>
           <Input onChange={this.changeFacebook2} label='Link do drugiego konkursu Facebook' />
           <Input onChange={this.changeFacebook2Name} label='Nazwa zdjecia' />
-          <FileButton onSelect={this.changeFacebook2File} label='Zdjecie drugiego konkursu Facebook' />
+          <div>Zdjecie drugiego konkursu Facebook</div>
+          <input className="form-control " type="file" onChange={this.changeFacebook2File} multiple/>
           <div>
             <Button>Wyślij</Button>
           </div>
