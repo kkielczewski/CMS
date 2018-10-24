@@ -1,8 +1,8 @@
-.homeContests {
+.articles {
   width: 800px;
   margin: auto !important;
   .header {
-    font-size: 22px;
+    font-size: 22px !important;
   }
   .labeled {
     margin: 10px;
@@ -11,15 +11,16 @@
       padding: 8px !important;
     }
     input {
-      padding: 5px;
+      padding: 5px !important;
       width: 550px !important;
     }
   }
   .form-control {
     height: auto;
-    padding: 0;
-    margin: 10px auto;
-    width: 700px;
+    padding: 0 !important;
+    margin: 10px auto !important;
+    width: 700px !important;
+    font-size: 20px !important;
   }
   .button {
     font-size: 20px;
