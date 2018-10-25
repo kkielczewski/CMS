@@ -41,10 +41,10 @@ class Experts extends Component {
   }
 
   handleClick() {
-    if (this.state.title !== '' && this.state.text !== '' && this.state.thumbnail !== null && this.state.playlist !== '') {
+    if (this.state.name !== '' && this.state.text !== '' && this.state.thumbnail !== null && this.state.playlist !== '') {
       const tmp = this.state.thumbnail;
 
-      const tmp2 = { title: this.state.title, text: this.state.text, thumbnailName: this.state.thumbnailName, playlist: this.state.playlist };
+      const tmp2 = { name: this.state.name, text: this.state.text, thumbnailName: this.state.thumbnailName, playlist: this.state.playlist };
       console.log(tmp2);
 
       const data = new FormData();
