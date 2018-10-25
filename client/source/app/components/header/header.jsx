@@ -31,44 +31,39 @@ class Header extends Component {
   buildNavigation() {
     const links = [
       {
-        name: 'Dashboard',
-        link: 'dashboard',
-        authenticated: true
-      },
-      {
         name: 'Home Page Contests',
         link: 'homecontests',
-        authenticated: false
+        authenticated: true
       },
       {
         name: 'Articles',
         link: 'articles',
-        authenticated: false
+        authenticated: true
+      },
+      {
+        name: 'Videos',
+        link: 'videos',
+        authenticated: true
       },
       {
         name: 'Experts',
         link: 'experts',
-        authenticated: false
+        authenticated: true
       },
       {
         name: 'Contests',
         link: 'contests',
-        authenticated: false
+        authenticated: true
       },
       {
         name: 'Contests Winners',
         link: 'winners',
-        authenticated: false
+        authenticated: true
       },
       {
         name: 'Sign out',
         onClick: this.props.logoutUser,
         authenticated: true
-      },
-      {
-        name: 'Register',
-        link: 'register',
-        authenticated: false
       }
     ];
 
